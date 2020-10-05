@@ -1,0 +1,6 @@
+<%@ page pageEncoding="UTF-8" %>
+<div>
+    <hr/>
+    <div align="center">Desenvolvido na disciplina de POO - <small>Prof. Ricardo Pupo Larguesa</small></div>
+    <div align="center" style="padding-bottom:15px">Aluno - <small>Sávio Gabriel Santos Gois</small></div>
+</div>
