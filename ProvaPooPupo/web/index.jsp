@@ -23,7 +23,6 @@
                 <%for(int i = 0; i <= Disciplina.getList().size(); i++){
                     num = i;
                 }%>
-                <
                 <tr>
                     <th><b>Disciplinas: </b></th>
                     <th><%= num %></th>

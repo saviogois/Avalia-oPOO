@@ -17,7 +17,6 @@
                 <tr>
                     <td><b>RA: </b></td>
                     <td>1290481912032</td>                </tr>
-                <
                 <tr>
                     <td><b>GitHub: </b></td>
                     <td><a class="link" href="https://github.com/saviogois">Link para repositório</a></td>
