@@ -32,7 +32,7 @@
          <%@include file="WEB-INF/jspf/menu.jspf"%>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="style-disc.css">
-        <title>Minhas Disciplinas</title>
+        <title>Minhas Disciplinas - Sávio</title>
     </head>
     <body>
         <div id="container2">
