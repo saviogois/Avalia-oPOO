@@ -1,0 +1,7 @@
+#container2{
+    border-radius: 20px;
+    background-image:linear-gradient(to bottom, #d40000, #b85656);
+    box-shadow: 2px 7px 15px grey;
+    margin-left: auto;
+    margin-right: auto;
+}

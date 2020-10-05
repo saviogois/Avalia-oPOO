@@ -1,1 +1,12 @@
 <%@ page pageEncoding="UTF-8" %>
+<header>
+    <div class="estilo-header">
+        <div class="estilo-texto">
+            <img class="logo" src="images/logo.png" alt="N/A">
+            <a class="menu" id="a" href="index.jsp">Início</a>
+            <a class="menu" id="a" href="minha-disc.jsp">Minhas Disciplinas</a>
+            <a class="menu" id="a" href="sobre.jsp">Sobre</a>
+            <b> - Avaliação POO</b>
+        </div>
+    </div>
+</header>
