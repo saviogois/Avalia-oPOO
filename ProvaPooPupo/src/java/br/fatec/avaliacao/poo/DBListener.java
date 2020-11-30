@@ -5,6 +5,7 @@
  */
 package br.fatec.avaliacao.poo;
 
+import br.fatec.avaliacao.poo.Disciplina;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.sql.*;
@@ -25,17 +26,17 @@ public class DBListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         Connection con = null;
-        Statement stmt = null;
-        try{
-            Class.forName(CLASS_NAME);
-            con = getConnection();
-            stmt = con.createStatement();
-            stmt.execute(Disciplina.getCreateStatement());
-        }catch(Exception ex){
+    Statement stmt = null;
+    try{
+    Class.forName(CLASS_NAME);
+    con = getConnection();
+    stmt = con.createStatement();
+    stmt.execute(Disciplina.getCreateStatement());
+    }catch(Exception ex){
             System.out.println(ex);
-        }
+}
     }
-
+    
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
     }

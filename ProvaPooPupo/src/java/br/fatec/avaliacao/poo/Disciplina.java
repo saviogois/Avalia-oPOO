@@ -1,40 +1,38 @@
 package br.fatec.avaliacao.poo;
-
 import java.util.ArrayList;
 import java.sql.*;
-
 public class Disciplina {
     private long rowId;
     private String nome;
     private String ementa;
-    private int ciclo;
-    private double nota;
-    
+    private Integer ciclo;
+    private Double nota;
+
     public static ArrayList<Disciplina> getList(){
         ArrayList<Disciplina> list = new ArrayList<>();
-        Connection con = null; Statement stmt = null; ResultSet rs =null;
-        try{
+        Connection con = null; Statement stmt = null; ResultSet rs = null;
+        try {
             con = DBListener.getConnection();
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT rowid, * FROM disciplinas");
+            rs = stmt.executeQuery("SELECT rowid, * FROM disciplina");
             while(rs.next()){
                 list.add(new Disciplina(
-                    rs.getLong("rowid"),
-                    rs.getString("name"),
-                    rs.getString("ementa"),
-                    rs.getInt("ciclo"),
-                    rs.getDouble("nota"))
-                );
+                        rs.getLong("rowid"),
+                        rs.getString("nome"),
+                        rs.getString("ementa"),
+                        rs.getInt("ciclo"),
+                        rs.getDouble("nota")
+                ));
             }
-    }catch(Exception ex){
-            System.out.println(ex); 
-    }
+        }catch(Exception ex) {
+            System.out.println(ex);
+        }
         return list;
     }
     
     public static void insert(String nome, String ementa, Integer ciclo, Double nota){
-        Connection con = null;PreparedStatement stmt = null; ResultSet rs = null;
-        try{
+        Connection con = null; PreparedStatement stmt = null; ResultSet rs = null;
+        try {
             con = DBListener.getConnection();
             stmt = con.prepareStatement("INSERT INTO disciplina VALUES(?,?,?,?)");
             stmt.setString(1, nome);
@@ -42,23 +40,23 @@ public class Disciplina {
             stmt.setInt(3, ciclo);
             stmt.setDouble(4, nota);
             stmt.execute();
-        }catch(Exception ex){
+        }catch(Exception ex) {
             System.out.println(ex);
         }
     }
-    
     public static void delete(long rowid){
-        Connection con = null;PreparedStatement stmt = null; ResultSet rs = null;
+        Connection con = null; PreparedStatement stmt = null; ResultSet rs = null;
         try{
             con = DBListener.getConnection();
             stmt = con.prepareStatement("DELETE FROM disciplina WHERE rowid=?");
             stmt.setLong(1, rowid);
             stmt.execute();
-    }catch(Exception ex){
+        }catch(Exception ex){
             System.out.println(ex);
         }
     }
-   public Disciplina(long rowId, String nome, String ementa, Integer ciclo, Double nota) {
+    
+    public Disciplina(long rowId, String nome, String ementa, Integer ciclo, Double nota) {
         this.rowId = rowId;
         this.nome = nome;
         this.ementa = ementa;
@@ -105,12 +103,16 @@ public class Disciplina {
     public void setCiclo(Integer ciclo) {
         this.ciclo = ciclo;
     }
+    
+    
+    
     public static String getCreateStatement(){
         return "CREATE TABLE IF NOT EXISTS disciplina("
                 + "nome VARCHAR(50) UNIQUE NOT NULL,"
-                + "EMENTA VARCHAR(200) NOT NULL,"
+                + "ementa VARCHAR(600) NOT NULL,"
                 + "ciclo INT NOT NULL,"
                 + "nota DOUBLE NOT NULL"
-                +")";
+                + ")";
     }
+    
 }
